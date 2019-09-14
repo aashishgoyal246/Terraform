@@ -2,9 +2,9 @@ aws sts assume-role --role-arn "ARN OF THE ASSUMED ROLE" --role-session-name "AN
 
 # Then below entries will be generated so pass as it is in shell
 
-export AWS_ACCESS_KEY_ID=ASIAX5THFZGYI3CDO6UL
-export AWS_SECRET_ACCESS_KEY=mdMDao2YcQf9ybXMthvKPpwRRfG3X+v3B++Lbp5x
-export AWS_SESSION_TOKEN=FQoGZXIvYXdzEEkaDHoGVTWLIvGWCHIxzyLuAU/1sRpOfXGDRZJt6R5izPXsJbFZ+kkpoOBeTeSM9tmmAYXA10eMQSJXE8QymvbYJx+cvHw0tFgDdPKOe7qDzn2wsj2qES26EF6TyjC5mHNcoqid277vmTqJ9qvPvBrzMtVI19qtw7DI4gGIj0/grO3di0E+GZAHMsaiG3QQTabM+Vkltx7k4S/3M7eMj9YI/7PGrNZVWQJlytO8Pp7K2AfWe3ZJhm6exNEGHGgE2ZjSR6dYzMzqoMQXKmiTxjghU6GvMlSw9/gMo1TeCRfibtMrNcw+D80Pjkt8qljcIEBtwHTDGIGqaPnZEhgT5WYo17zp6wU=
+export AWS_ACCESS_KEY_ID=XXXXXXXXXXXX
+export AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXX
+export AWS_SESSION_TOKEN=XXXXXXXXXXXXXXXX
 
 # Below is the link for the same
 
