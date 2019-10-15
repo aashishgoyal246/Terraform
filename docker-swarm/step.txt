@@ -1,0 +1,50 @@
+Create a directory (mkdir terraform) then copy the files to create infrastructure in aws then 2 keypair are
+generated and then copy 1st key and save with .pem extension and do ssh using mobaxterm username (ubuntu)
+then do the following:
+
+perform all the commands with root access (sudo su -) or use sudo with every command
+
+1. copy the 2nd ssh key on master machine and save with .pem extension and change permission to 600 of 2nd key
+   (chmod 600 key.pem) 
+
+2. perform the following commands in both master and slave machines:
+
+apt-get update -y; apt-get upgrade -y 
+apt-get install apt-transport-https software-properties-common ca-certificates -y
+wget https://download.docker.com/linux/ubuntu/gpg
+apt-key add gpg
+echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" >> /etc/apt/sources.list
+apt-get update -y
+apt-get install docker-ce -y
+systemctl start docker
+systemctl enable docker
+
+3. configure firewall ports on master machine by the following commands:
+
+ufw allow 22/tcp
+ufw allow 2376/tcp
+ufw allow 2377/tcp
+ufw allow 7946/tcp
+ufw allow 7946/udp
+ufw allow 4789/udp
+
+ufw enable
+ufw reload
+
+systemctl restart docker
+
+4. perform following command on master machine:
+
+docker swarm init --advertise-addr 10.1.0.25
+
+systemctl restart docker
+
+5. copy the output (docker swarm join) from master machine and then do the following in slave machine:
+
+systemctl restart docker
+
+(docker swarm join) command
+
+systemctl restart docker
+
+6. finally move to master machine and check using (docker node ls) it will show 2 outputs.
